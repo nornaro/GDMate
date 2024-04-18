@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://e3vcb23uouvh"]
+
+[ext_resource type="Script" path="res://pipeline.gd" id="1_10ffn"]
+[ext_resource type="Script" path="res://name.gd" id="1_vtnc5"]
+[ext_resource type="Script" path="res://stages.gd" id="2_uj0db"]
+
+[node name="Pipeline" type="Control"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
+grow_horizontal = 2
+script = ExtResource("1_10ffn")
+
+[node name="View" type="HBoxContainer" parent="."]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Data" type="HSplitContainer" parent="View"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 300
+
+[node name="Name" type="RichTextLabel" parent="View/Data"]
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "PipelineName"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_vtnc5")
+
+[node name="Stages" type="HBoxContainer" parent="View/Data"]
+auto_translate_mode = 1
+layout_mode = 2
+script = ExtResource("2_uj0db")
+
+[node name="Expand" type="Button" parent="."]
+auto_translate_mode = 1
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+button_mask = 0
+text = " "

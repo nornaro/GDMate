@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=3 uid="uid://rdlhyrek5m8m"]
+
+[ext_resource type="Script" path="res://pipelines.gd" id="1_jnv8p"]
+
+[sub_resource type="Gradient" id="Gradient_p03wo"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_147t5"]
+frequency = 0.0002
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yxk7s"]
+color_ramp = SubResource("Gradient_p03wo")
+noise = SubResource("FastNoiseLite_147t5")
+
+[sub_resource type="Theme" id="Theme_bgww2"]
+
+[sub_resource type="Gradient" id="Gradient_vmle6"]
+offsets = PackedFloat32Array(0, 0.468278)
+colors = PackedColorArray(0.145098, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4ebp2"]
+frequency = 0.0002
+fractal_type = 0
+fractal_weighted_strength = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jlf24"]
+width = 64
+height = 64
+invert = true
+color_ramp = SubResource("Gradient_vmle6")
+noise = SubResource("FastNoiseLite_4ebp2")
+
+[node name="GDMateUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_yxk7s")
+
+[node name="ScreenBox" type="VSplitContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 32
+dragger_visibility = 1
+
+[node name="MainBar" type="VBoxContainer" parent="Panel/ScreenBox"]
+layout_mode = 2
+theme = SubResource("Theme_bgww2")
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/ScreenBox/MainBar"]
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="Panel/ScreenBox/MainBar/Buttons"]
+layout_mode = 2
+text = "TEST"
+alignment = 0
+
+[node name="MainPanel" type="TextureRect" parent="Panel/ScreenBox"]
+layout_mode = 2
+texture = SubResource("NoiseTexture2D_jlf24")
+
+[node name="ContentBox" type="HBoxContainer" parent="Panel/ScreenBox/MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="ManuBar" type="VBoxContainer" parent="Panel/ScreenBox/MainPanel/ContentBox"]
+auto_translate_mode = 1
+layout_direction = 2
+layout_mode = 2
+
+[node name="Load" type="Button" parent="Panel/ScreenBox/MainPanel/ContentBox/ManuBar"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Load"
+alignment = 0
+
+[node name="Edit" type="Button" parent="Panel/ScreenBox/MainPanel/ContentBox/ManuBar"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Edit"
+alignment = 0
+
+[node name="Clone" type="Button" parent="Panel/ScreenBox/MainPanel/ContentBox/ManuBar"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Clone
+"
+alignment = 0
+
+[node name="Delete" type="Button" parent="Panel/ScreenBox/MainPanel/ContentBox/ManuBar"]
+auto_translate_mode = 1
+layout_mode = 2
+text = "Delete
+"
+alignment = 0
+
+[node name="Pipelines" type="VBoxContainer" parent="Panel/ScreenBox/MainPanel/ContentBox"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_jnv8p")
+
+[connection signal="button_up" from="Panel/ScreenBox/MainPanel/ContentBox/ManuBar/Load" to="Panel/ScreenBox/MainPanel/ContentBox/Pipelines" method="_on_load_button_up"]

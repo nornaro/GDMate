@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulpluc1pp7bs"]
+
+[ext_resource type="Script" path="res://server.gd" id="1_urpfw"]
+[ext_resource type="Script" path="res://websocket/WebSocketServer.gd" id="3_0eqsy"]
+
+[node name="Server" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_urpfw")
+
+[node name="WebSocketServer" type="Node" parent="."]
+script = ExtResource("3_0eqsy")
+supported_protocols = PackedStringArray("demo-chat")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 35.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Command" type="LineEdit" parent="."]
+auto_translate_mode = 1
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -31.0
+offset_right = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+clear_button_enabled = true
+deselect_on_focus_loss_enabled = false
+flat = true
+draw_control_chars = true
+select_all_on_focus = true
+caret_blink = true
+caret_force_displayed = true
+caret_mid_grapheme = true
+
+[node name="Token" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Token"
+
+[node name="Out" type="RichTextLabel" parent="."]
+auto_translate_mode = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[connection signal="client_connected" from="WebSocketServer" to="." method="_on_web_socket_server_client_connected"]
+[connection signal="client_disconnected" from="WebSocketServer" to="." method="_on_web_socket_server_client_disconnected"]
+[connection signal="message_received" from="WebSocketServer" to="." method="_on_web_socket_server_message_received"]
+[connection signal="pressed" from="Token" to="." method="_on_token_pressed"]

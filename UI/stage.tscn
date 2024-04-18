@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3heocvflerpn"]
+
+[ext_resource type="Texture2D" uid="uid://b8qidn25c2q8j" path="res://icons/Node.svg" id="1_emnee"]
+
+[node name="Stage" type="TextureButton"]
+auto_translate_mode = 1
+size_flags_horizontal = 2
+disabled = true
+button_mask = 0
+texture_normal = ExtResource("1_emnee")
+stretch_mode = 5

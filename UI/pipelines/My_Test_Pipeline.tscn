@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://w2wpgd3h3u6b"]
+
+[node name="MyTestPipeline" type="Node"]
+
+[node name="Parallel" type="HBoxContainer" parent="."]
+
+[node name="Sequential" type="VBoxContainer" parent="."]
+
+[node name="Matrix" type="GridContainer" parent="."]
+
+[node name="Stage" type="Node" parent="."]

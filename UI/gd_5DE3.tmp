@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://qff3ml51bqrb"]
+
+[ext_resource type="Script" path="res://tcp.gd" id="1_23v8t"]
+[ext_resource type="Script" path="res://ssh.gd" id="2_d5elt"]
+[ext_resource type="Script" path="res://web_socket.gd" id="2_g0bh5"]
+[ext_resource type="Script" path="res://ssl.gd" id="2_p0apv"]
+[ext_resource type="Script" path="res://rtc.gd" id="5_gi6uu"]
+[ext_resource type="Script" path="res://e_net.gd" id="6_1c27j"]
+
+[node name="GdMateServer" type="Node"]
+
+[node name="TCP" type="Node" parent="."]
+script = ExtResource("1_23v8t")
+
+[node name="SSL" type="Node" parent="."]
+script = ExtResource("2_p0apv")
+
+[node name="SSH" type="Node" parent="."]
+script = ExtResource("2_d5elt")
+
+[node name="WebSocket" type="Node" parent="."]
+script = ExtResource("2_g0bh5")
+
+[node name="RTC" type="Node" parent="."]
+script = ExtResource("5_gi6uu")
+
+[node name="ENet" type="Node" parent="."]
+script = ExtResource("6_1c27j")

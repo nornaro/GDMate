@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713435974
+client.gd::GDScript::-1::1713375491::0::1::::<>Node<>::
+client.tscn::PackedScene::1069115919107768497::1713375634::0::1::::<><>::res://websocket/WebSocketClient.gd<>res://client.gd
+export_presets.cfg::TextFile::-1::1713373859::0::1::::<><>::
+icon.webp::CompressedTexture2D::3626017087650301524::1712440139::1712440394::1::::<><>::
+::res://websocket/::1713435485
+WebSocketClient.gd::GDScript::-1::1713375033::0::1::::WebSocketClient<>Node<>::

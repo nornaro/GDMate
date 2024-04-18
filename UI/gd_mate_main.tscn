@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://xmej8yw6onff"]
+
+[ext_resource type="PackedScene" uid="uid://rdlhyrek5m8m" path="res://gd_mate_ui.tscn" id="1_qy7iy"]
+
+[node name="GdMateMain" type="Node"]
+
+[node name="GDMateUI" parent="." instance=ExtResource("1_qy7iy")]
+
+[node name="GDMateLogic" type="Node" parent="."]

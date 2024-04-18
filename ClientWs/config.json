@@ -1,0 +1,12 @@
+{
+	"Token": "db513a3e323acbc90061db5b3c728b4f1c8b05ca",
+	"Protocol": "WebSocket",
+	"WebSocket": {
+		"uid": "",
+		"master": "ws://localhost:9988/test/",
+		"retry": {
+			"wait": 60,
+			"times": 60
+		}
+	}
+}

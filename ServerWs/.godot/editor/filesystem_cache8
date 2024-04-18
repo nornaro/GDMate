@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1713436185
+icon.webp::CompressedTexture2D::3626017087650301524::1712440139::1712440394::1::::<><>::
+Matrix.gd::GDScript::-1::1713333368::0::1::::Matrix<>Node<>res://icon.webp::
+Parallel.gd::GDScript::-1::1713331189::0::1::::Parallel<>Node<>res://icon.webp::
+Post.gd::GDScript::-1::1713333345::0::1::::Pre<>Node<>res://icon.webp::
+Pre.gd::GDScript::-1::1713333358::0::1::::Post<>Node<>res://icon.webp::
+Sequential.gd::GDScript::-1::1713330566::0::1::::Sequential<>Node<>res://icon.webp::
+server.gd::GDScript::-1::1713375444::0::1::::<>Control<>::
+server.tscn::PackedScene::3813837165131461468::1713375554::0::1::::<><>::res://server.gd<>res://websocket/WebSocketServer.gd
+::res://websocket/::1713435485
+WebSocketServer.gd::GDScript::-1::1712440139::0::1::::WebSocketServer<>Node<>::
